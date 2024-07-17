@@ -10,8 +10,8 @@ dotenv.config();
 const app= express();
 app.use(cookieParser());
 app.use(cors({
-    origin:"http://localhost:5173",
-    // origin:"https://hub-xf.vercel.app/",
+    // origin:"http://localhost:5173",
+    origin:"https://hub-xf.vercel.app",
     credentials:true
 }));
 app.use(express.json());
