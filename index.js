@@ -10,19 +10,20 @@ dotenv.config();
 const app= express();
 app.use(cookieParser());
 app.use(cors({
-    origin:"https://hub-xf.vercel.app/",
+    origin:"http://localhost:5173",
+    // origin:"https://hub-xf.vercel.app/",
     credentials:true
 }));
 app.use(express.json());
 app.use("/api",router);
 app.use("/api",mediaRoute);
 
-app.use("/",(req,res)=>{
-    return res.status(200).json({
-        success:true,
-        message:"working fine"
-    })
-})
+// app.use("/",(req,res)=>{
+//     return res.status(200).json({
+//         success:true,
+//         message:"working fine"
+//     })
+// })
 
 app.listen(process.env.PORT,()=>{
     console.log("Backend ready at port number 4000");
